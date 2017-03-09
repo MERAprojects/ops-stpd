@@ -2985,7 +2985,7 @@ util_mstp_instance_status_clean(time_t curr_time, const struct ovsrec_system *sy
         ovsrec_mstp_instance_set_root_path_cost(mstp_row, &def_zero, 1);
         ovsrec_mstp_instance_set_root_priority(mstp_row, &def_zero, 1);
         /* Updating current time as default value */
-        ovsrec_mstp_instance_set_time_since_top_change(mstp_row, &curr_time, 1);
+        ovsrec_mstp_instance_set_time_since_top_change(mstp_row, (int64_t*)&curr_time, 1);
         ovsrec_mstp_instance_set_root_port(mstp_row, "");
         ovsrec_mstp_instance_set_topology_change_count(mstp_row, &def_zero, 1);
         ovsrec_mstp_instance_set_topology_unstable(mstp_row, &topology_unstable, 1);
